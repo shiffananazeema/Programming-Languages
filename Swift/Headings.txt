@@ -1,0 +1,62 @@
+Swift
+Variables
+Constants
+Get the Value
+Print
+Interpolation
+Datatypes
+ 	Int
+	Float
+	Double
+	Boolean
+	String
+	Character
+
+	Optional
+	Tuples
+Type Aliases
+Type Annotation
+Type Safe
+Type Inference
+Operators
+    Unary
+    Binary
+    Ternary
+	Arithmetic
+	Assignment
+	Comparison
+	Logical
+	Bitwise
+	Range
+Collection Type
+	Array
+	Sets
+	Dictionaries
+Control Flow
+	Loop Statement
+		for-in
+		while
+		repeat while
+	Branch Statement	
+		if
+		guard
+		switch
+	Control Transfer Statement
+		continue, break, fallthrough, return, throw
+Funtions
+	Standard Library Function
+	User Defined Function
+Closures
+Structures and Classes
+Enumerations	
+Properties
+	Stored Property
+	Computed Property
+	Lazy Stored Property
+Methods
+Protocol
+Subscript
+Inheritance
+Initialization
+Deinitialization
+Extension

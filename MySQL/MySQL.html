@@ -1,0 +1,507 @@
+Database:
+`````````
+Database is a systematic collection of data which support storage and manipulation of data in a easy way.
+
+DBMS:
+`````
+DataBase is a collection of programs which enables its users to access database, manipulate data,
+ reporting/representation of data.
+
+MySQL:
+``````
+MySQL is a widely used relational database management system (RDBMS).
+MySQL is free and open-source.
+MySQL is ideal for both small and large applications.
+
+MySQL is a relational database management system(RDMBS)
+MySQL is very fast, reliable, scalable, and easy to use
+MySQL is cross-platform
+MySQL is compliant with the ANSI SQL standard
+MySQL was first released in 1995
+MySQL is developed, distributed, and supported by Oracle Corporation
+MySQL is named after co-founder Monty Widenius's daughter: My
+
+
+RDBMS:
+``````
+RDBMS stands for Relational Database Management System.
+RDBMS is a program used to maintain a relational database.
+RDBMS is the basis for all modern database systems such as MySQL,
+                   Microsoft SQL Server, Oracle, and Microsoft Access.
+RDBMS uses SQL queries to access the data in the database.
+
+
+SQL:
+````
+Structured Query Language
+SQL is the standard language for dealing with Relational Databases.
+SQL is used to insert, search, update, and delete database records.
+
+(A Relational database is a type of database that stores and provides 
+access to data points that are related to one another.)
+
+(SQL keywords are NOT case sensitive: select is the same as SELECT)
+
+Different types of sql commands:
+````````````````````````````````
+1. Data Query Language - Select.    
+2. Data Definition Language - Create Table, Alter Table, Drop Table.
+3. Data Manipulation Language - Insert, Update, Delete.
+4. Data Control Language - Grant, Revoke.
+
+
+Some of The Most Important SQL Commands:
+`````````````````````````````````````````
+SELECT - extracts data from a database
+UPDATE - updates data in a database
+DELETE - deletes data from a database
+INSERT INTO - inserts new data into a database
+CREATE DATABASE - creates a new database
+ALTER DATABASE - modifies a database
+CREATE TABLE - creates a new table
+ALTER TABLE - modifies a table
+DROP TABLE - deletes a table
+CREATE INDEX - creates an index (search key)
+DROP INDEX - deletes an index
+
+````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+
+MySQL:
+
+To Start the MySQL on the system
+```````````````````````````````
+sudo su - For the Root
+/opt/lampp/lampp start - To Start the Xampp localhost
+/opt/lampp/lampp stop  - To Stop the Xampp localhost
+
+CREATE DATABASE:
+````````````````
+CREATE DATABASE databasename;
+
+eg: CREATE DATABASE Learning;
+
+USE DATABASE:
+`````````````
+USE databasename;
+
+eg: USE Learning;
+
+DELETE DATABASE:
+````````````````
+DROP DATABASE databasename;
+
+eg: DROP DATABASE Learning;
+
+CREATE TABLE:
+`````````````
+CREATE TABLE table_name (
+    column1 datatype,
+    column2 datatype,
+    column3 datatype,
+   ....
+);
+
+eg:
+CREATE TABLE Employee(
+    Id int not null,
+    Name varchar(20),
+    Salary int,
+    Age int,
+    Gender varchar(20),
+    Department varchar(20),
+    
+    PRIMARY KEY(Id)
+);
+
+CREATE TABLE USING ANOTHER TABLE:
+`````````````````````````````````
+CREATE TABLE new_table_name AS
+    SELECT column1, column2,...
+    FROM existing_table_name
+    WHERE ....;
+
+eg:
+CREATE TABLE Notice AS
+SELECT Id, MobileNO
+FROM Customer;
+
+DELETE TABLE:
+``````````````
+DROP TABLE table_name;
+
+eg:
+DROP TABLE Customer;
+
+DELETE ALL VALUES IN THE TABLE:
+```````````````````````````````
+TRUNCATE TABLE table_name;
+
+eg:
+TRUNCATE TABLE Customer;
+
+ALTER TABLE:
+````````````
+To Add a column in the table - 
+ALTER TABLE table_name
+ADD column_name datatype;
+
+eg:
+ALTER TABLE Customer
+ADD Password varchar(15);
+
+To Delete a column in the table -
+ALTER TABLE table_name
+DROP COLUMN column_name;
+
+eg:
+ALTER TABLE Customer
+DROP COLUMN EmailId;
+
+To Modify the Data type of the column -
+ALTER TABLE table_name
+MODIFY COLUMN column_name datatype;
+
+eg:
+ALTER TABLE Customer
+MODIFY COLUMN DateOfBirth year;
+
+INSERT Statement:
+`````````````````
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+
+eg:
+INSERT INTO Employee VALUES(
+1,'Shifa',50000,21,'Female','Software');
+(or)
+INSERT INTO `Customer`(`Id`, `Name`, `MobileNO`, `EmailId`) 
+VALUES ('001','Shifa','783248972','shifa@gmail.com')
+
+
+SELECT Statement:
+`````````````````
+To select the whole table -
+SELECT * FROM tablename;
+eg:
+SELECT * FROM Employee;
+
+To select one column from the table - 
+SELECT columnname FROM tablename; 
+eg:
+SELECT Name FROM Employee;
+SELECT Name,Gender,Salary FROM Employee;
+
+To select the values of the columnname - 
+SELECT DISTINCT columnname FROM tablename;
+eg:
+SELECT DISTINCT Gender FROM Employee;
+
+To select number of rows in the column -
+SELECT COUNT(DISTINCT columnname) FROM tablename;
+
+WHERE Clause:
+`````````````
+It is used to filter records
+SELECT column1, column2 FROM table_name WHERE condition;
+SELECT * FROM tablename WHERE columnname = 'Name';
+
+eg:
+SELECT * FROM Employee WHERE Gender='Female';
+SELECT * FROM Employee WHERE Age < 25 ;
+
+Operators:
+``````````
+AND OPERATOR:
+^^^^^^^^^^^^
+AND Operator displays records if all the conditions separated by AND are TRUE
+(All the conditions satisfied)
+
+SELECT column1,column2 FROM tablemane WHERE [condition1] AND [condition2]...AND [conditionN];
+
+eg:
+SELECT * FROM Employee WHERE Gender='Female' AND Age < 25;
+
+OR OPERATOR:
+^^^^^^^^^^^^
+OR Operator displays records if any of the conditions separated by OR is TRUE
+(Atleast One of the condition satisfied)
+
+SELECT column1,column2 FROM tablemane WHERE [condition1] OR [condition2]...OR [conditionN];
+
+eg:
+SELECT * FROM Employee WHERE Salary < 45000 OR Age > 25;
+
+NOT OPERATOR:
+^^^^^^^^^^^^^
+NOT Operator displays a record if the condition is NOT TRUE
+
+SELECT column1,column2 FROM tablemane WHERE NOT [conditionN];
+
+eg:
+SELECT * FROM Employee WHERE NOT Gender='Female';
+
+LIKE OPERATOR:
+^^^^^^^^^^^^^^
+LIKE Operator is used to extract records where a particular pattern is present.
+
+SELECT col_list FROM tablename WHERE column_name LIKE 'xx%';
+
+eg:
+SELECT*FROM Employee WHERE Name Like 's%';
+
+BETWEEN OPERATOR:
+^^^^^^^^^^^^^^^^^
+BETWEEN Operator is used to select values within a given range
+
+SELECT col_list FROM tablename WHERE column_name BETWEEN val1 AND val2;
+
+eg:
+SELECT * FROM Employee WHERE Age BETWEEN 20 AND 25;
+
+FUNCTIONS:
+```````````
+MINIMUM FUNCTION:
+^^^^^^^^^^^^^^^^^
+MIN() function gives you the smallest value
+
+SELECT MIN(column_name) FROM tablename;
+
+eg:
+SELECT MIN(Salary) FROM Employee;
+
+MAXIMUM FUNCTION:
+^^^^^^^^^^^^^^^^^
+MAX() function gives you the largest value
+
+SELECT MAX(column_name) FROM tablename;
+
+eg:
+SELECT MAX(Salary) FROM Employee;
+
+COUNT FUNCTION:
+^^^^^^^^^^^^^^^
+COUNT() function returns the number of rows that match a specific criteria
+
+SELECT COUNT(*) FROM tablename WHERE condition;
+
+eg:
+SELECT COUNT(*) FROM Employee WHERE Gender='Male';
+
+SUM FUNCTION:
+^^^^^^^^^^^^^^^
+SUM() function gives the total sum of a numeric column
+
+SELECT SUM(column_name) FROM tablename;
+
+eg:
+SELECT SUM(Salary) FROM Employee;
+
+AVERAGE FUNCTION:
+^^^^^^^^^^^^^^^^^
+AVG() function gives the average sum of a numeric column
+
+SELECT AVG(column_name) FROM tablename;
+
+eg:
+SELECT AVG(Age) FROM Employee;
+
+STRING FUNCTIONS:
+`````````````````
+SELECT 'Test';
+
+LTRIM() - Removes blanks on the left side of the character expression
+eg: SELECT LTRIM('Test');
+LOWER() - Converts all characters to lower case letters
+eg: SELECT LOWER('Test');
+UPPER() - Converts all characters to upper case letters
+eg: SELECT UPPER('Test');
+REVERSE() - Reverses all the characters in the string
+eg: SELECT REVERSE('Test');
+SUBSTRING() - Gives a substring from the original string
+eg: SELECT substring('this is test',9,4);
+
+
+ORDER BY:
+`````````
+ORDER BY is used to sort the data in ascending or decending order
+
+SELECT column_list FROM tablename ORDER BY col1,col2... ASC|DESC;
+
+eg:
+SELECT * FROM Employee ORDER BY Salary;
+SELECT * FROM Employee ORDER BY Salary DESC;
+
+TOP Clause:
+```````````
+TOP is used to fetch the TOP N records
+
+SELECT TOP x column_list FROM tablename;
+
+eg:
+SELECT TOP 3 * FROM Employee;
+
+GROUP BY:
+`````````
+GROUP BY is used to get aggregate result with respect to a GROUP
+
+SELECT column_list FROM tablename GROUP BY column_name;
+
+eg:
+SELECT avg(Salary),Gender FROM Employee GROUP BY Gender;
+
+SELECT AVG(Age),Department FROM Employee GROUP BY Department ORDER BY AVG(Age) DESC;
+
+Having Clause:
+``````````````
+Having Clause is used in combination with GROUP BY to impose conditions on groups
+
+SELECT column_name FROM tablename WHERE condition GROUP BY columnname HAVING condition ORDER BY columnname;
+
+eg:
+SELECT Department, AVG(Salary) AS AVG_SALARY FROM Employee GROUP BY Department HAVING AVG(Salary) > 40000;
+
+Update Statement:
+`````````````````
+Update is used to modify the exsisting records in a table
+
+UPDATE tablename SET col1=val1,col2=val2...[WHERE condition];
+
+eg:
+UPDATE Employee SET Age='20' WHERE Name = 'Shifa';
+
+Delete Statement:
+`````````````````
+DELETE Statement i used to delete existing records in the table
+ 
+DELETE FROM tablename [WHERE CONDITION];
+
+eg:
+DELETE FROM Employee WHERE Age = '30';
+
+Inner Join:
+```````````
+Inner Join returns records that have matching values in both the tables. It is also known as simple Join
+
+SELECT column FROM table1 INNER JOIN table2 ON table1.column_x=table2.column_y;
+
+eg:
+SELECT Employee.Name, Employee.Department, Department.d_Name, Department.d_Location 
+FROM Employee INNER JOIN Department 
+ON Employee.Department = Department.d_Name;
+(or)
+SELECT Customer.Customer_Name, Product.Product_Name, Shop.Shop_Name, Order_Details.Quantity, 
+Order_Details.Price FROM Customer INNER JOIN Product ON Customer.Id = Product.Id INNER JOIN 
+Shop ON Product.Id = Shop.Id INNER JOIN Order_Details ON Shop.Id = Order_Details.Id WHERE Customer.Id = 1;
+
+Right Join:
+```````````
+RIGHT JOIN return all the record from the right table and the matched records from the left table
+
+SELECT column FROM table1 RIGHT JOIN table2 ON table1.column_x=table2.column_y;
+
+eg:
+SELECT Employee.Name, Employee.Department, Department.d_Name, Department.d_Location 
+FROM Employee RIGHT JOIN Department 
+ON Employee.Department = Department.d_Name;
+
+LEFT Join:
+```````````
+LEFT JOIN return all the record from the LEFT table and the matched records from the right table
+
+SELECT column FROM table1 LEFT JOIN table2 ON table1.column_x=table2.column_y;
+
+eg:
+SELECT Employee.Name, Employee.Department, Department.d_Name, Department.d_Location 
+FROM Employee LEFT JOIN Department 
+ON Employee.Department = Department.d_Name;
+
+FULL JOIN:
+``````````
+It returns all rows from the LEFT table and the RIGHT table with NULL values in place where the Join condition is not met.
+
+SELECT column FROM table1 FULL JOIN table2 ON table1.column_x=table2.column_y;
+
+eg:
+SELECT Employee.Name, Employee.Department, Department.d_Name, Department.d_Location 
+FROM Employee FULL JOIN Department 
+ON Employee.Department = Department.d_Name;
+
+Union Operator:
+```````````````
+UNION Operator is used to combine the result set of two or more SELECT statements
+UNION ALL Operator will show all the results from the both tables
+
+SELECT column_list FROM table1
+Union 
+SELECT column_list FROM table2;
+
+eg:
+SELECT * FROM Table1 UNION SELECT * FROM Table2;
+SELECT * FROM Table1 UNION ALL SELECT * FROM Table2;
+
+Except Operator:
+````````````````
+Except Operator combines two select statements and returns unique records
+from the left query which are not part of the right query.
+
+SELECT column_list FROM table1
+EXCEPT
+SELECT column_list FROM table2;
+
+eg:
+SELECT * FROM Table1 EXCEPT SELECT * FROM Table2;
+
+Intersect Operator:
+```````````````````
+Intersect Operator helps to combine two select statements and returns the records
+which are common to both the select statements
+
+SELECT column_list FROM table1
+INTERSECT
+SELECT column_list FROM table2;
+
+eg:
+SELECT * FROM Table1 INTERSECT SELECT * FROM Table2;
+
+Views:
+Views is a virtual table based on the result of an swl statement
+
+CREATE VIEW viewname AS SELECT column1,column2... FROM tablename WHERE condition;
+
+eg:
+CREATE VIEW Female AS SELECT * FROM Employee WHERE Gender='Female';
+
+Drop View :
+```````````
+DROP VIEW viewname;
+
+eg:
+DROP VIEW Female;
+
+Alter Table:
+````````````
+Alter Table statement is used to add, delete or modify columns in a table
+
+ALTER TABLE tablename ADD column_name datatype;
+
+eg:
+ALTER TABLE Employee ADD DOB date;
+
+ALTER TABLE tablename DROP column_name datatype;
+
+eg:
+ALTER TABLE Employee DROP DOB;
+
+Merge:
+``````
+MERGE is the combination of INSERT, DELETE and UPDATE statements
+
+MERGE [Target] AS T
+USING [Source] AS S
+  ON [Join Condition]
+WHEN MATCHED 
+  THEN [Update Statement]
+WHEN NOT MATCHED BY TARGET
+  THEN [Insert Statement]
+WHEN NOT MATCHED BY SOURCE 
+  THEN [Delete Statement];    

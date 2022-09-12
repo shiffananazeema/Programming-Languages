@@ -1,0 +1,4 @@
+SELECT Customer.Customer_Name, Product.Product_Name, 
+Shop.Shop_Name, Order_Details.Quantity, Order_Details.Price 
+FROM Customer INNER JOIN Product  INNER JOIN Shop INNER JOIN 
+Order_Details WHERE Customer.Id = 1;

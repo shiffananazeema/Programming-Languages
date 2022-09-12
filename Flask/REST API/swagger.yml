@@ -1,0 +1,15 @@
+swagger: 3.0.3
+info:
+  title: Hyper Reality Technologies
+  description: Assignment for the Internship
+  version: 1.0.0
+consumes:
+  - "applicationjson"
+produces:
+  - "application/json"
+
+basePath: "/api"
+
+paths:
+  
+  

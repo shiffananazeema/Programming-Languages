@@ -1,0 +1,931 @@
+Swift
+````
+ - It is a programming language for iOS, macOS, watchOS and tvOS app Development.
+ - It is developed in June 2, 2014 by Chris Lattner in Apple Inc.
+
+ - Naming the values is the important thing in coding, so that others can understand too.
+ - A parameter is a value that is accepted by a function
+ - An Argument is the value which is passed during the function call 
+ - Recursive is the function that calls itself - if we didn't break it will call infinitly
+ - Overloading is two or more function with the same name but different parameter
+ - Overriding is the method in subclass overrides the method in superclass
+ - Property is the variable and constant defined inside a class
+ - Method is the function defined inside a class
+ - Static property is the class type(associated with class than object), we can access them using class name or struct name - static var num: Int = 0
+ - Object is called an instance of the class - Bike - class name, bike1 - object
+ - Synchronous: waits until the task has completed
+ - Asynchronous: completes a task in background and can notify you when complete
+                                              -----
+
+Variables:         	var name = "Shiffana"
+````````
+ - It is used to store and refer to values by the name.
+ - Variable can be set a different value in the future. 
+                                             -----
+
+Constants:       	let name = "Shiffana"
+`````````
+ - It is the extensive use of variables whose values can't be changed.
+ - let can be changed only in the class because it is refernce type
+                                            -----
+
+Get the Value:	var name = readLine()
+```````````
+ - Used to get the value from the user
+                                            -----
+
+ Print:           	print("Hello World!")
+`````
+ - Used to print the values
+                                            -----
+
+Interpolation: 	print("Hi, \(name))
+```````````
+ - Used to print the stored/defined values
+                                            -----
+
+Data Type:
+`````````
+ - Used to specify the type of the data that can be stored inside a variable
+ - There are 6 types of data types
+	- Integer
+	- Float
+	- Double
+	- Boolean
+	- String
+	- Character
+
+	- Optional
+	- Tuples
+                                            -----
+
+Integer:		var number: Int = 3
+``````
+ - Whole numbers with no fractional components 
+                                            -----
+
+Float:			let number: Float = 3.14
+`````
+ - Numbers with a Fractional components 
+ - Size: 32-bit floating-point number. (Up to 6 decimal places)
+                                            -----
+
+Double:		let number: Double = 27.70076970124653
+``````
+ - Also Fractional components
+ - Size: 64-bit floating-point number. (Up to 15 decimal places)
+
+ - If the data type was not mentioned it will be defaultly setted to double.
+                                            -----
+
+Boolean:		let fact: Bool = true
+```````
+ - It represent the logical entities. [ true or false ]
+                                            -----
+
+String:		let name: String = "Shiffana"
+`````
+ - It represent the textual data
+                                            -----
+
+Character:		let name: Character = "A"
+````````
+ - It represent the single character string
+                                            -----
+
+Optional:		var value: Int? / Int!   - nil
+```````
+ - Used in situations where a value may be absent ( ? / ! )
+ - It represents a variable that can hold either a value or no value
+
+Eg: 
+	let value: Int? = 5
+	print(value)		- Optional(5)
+	print(value!)		- 5
+
+ - There are four ways to handle optional
+
+ - If Statement
+    ``````````
+	- used to find whether it has a value or not by using if to compare - != nil
+Eg:
+	var someValue:Int?
+	if someValue != nil {
+		print("It has some value \(someValue!)")
+	} else {								- doesn't contain value
+		print("doesn't contain value")
+	}
+
+ - Optional Binding ( if - let )
+    `````````````````````
+	- It is used to extract the value to a variable if optional has a value
+Eg:
+	if let temp = someValue {
+		print("It has some value \(temp)") 
+	} else {								- doesn't contain value
+		print("doesn't contain value")
+	}
+
+ - Guard Statement
+    `````````````
+	- It is a if else condition without if
+Eg:
+	func testFunction() {
+		let someValue:Int? = 5
+		guard let temp = someValue else {
+			return						- It has some value 5
+		}
+		print("It has some value \(temp)")
+	}
+	testFunction()
+
+ - Nil-Coalescing
+    ````````````
+	- using ( ?? ) it check if optional has a value or it will return the other value 
+Eg:
+	 var someValue:Int!
+	let defaultValue = 5
+	let unwrappedValue:Int = someValue ?? defaultValue
+	print(unwrappedValue)						- 5
+
+                                            -----
+
+Tuples:		var product = ("MacBook", 1099.99)
+``````
+ - Used to group multiple values in single compound value
+                                            -----
+
+Type Aliases:	typealias value = Int
+``````````
+ - Used to create a new name for an existing type
+
+Eg:
+	typealias Feet = Int
+	var distance: Feet = 100
+	print(distance)
+                                            -----
+
+Type Annotation:	var value: Int = 42
+``````````````
+ - It is used to specify the type of the variable - [ Int is the type ]
+                                            -----
+
+Type Safety:
+``````````
+ - It is a type safe language
+ - If it expects a String, you can't pass an Int by mistake
+
+Eg:
+	var value = "Shiffana"
+	value = 14                       - Error
+                                            -----
+
+Type Inference:
+````````````
+ - If type was not specified the code, Swift use type inference to find the type
+ - It enables the compiler to find the type of the expression.
+
+Eg:
+	var value = 50
+	value = 55			- 55
+                                            -----
+
+Operators:
+````````
+ - Operator is used to check, change or combine values.
+ - There are three kind of Operators
+	- Unary Operator 		- [ -a, b! ] 
+	- Binary Operator		- [ 2 + 3 ]
+	- Ternary Operator	- [ a ? b : c ]		- condition ? expression1 : expression 2
+								var num = 2
+								var result = (num > 0) ? "Positive" : "Negative"  = Positive
+
+ - Types of Operators
+	- Arithmetic Operators
+	- Assignment Operators
+	- Comparison Operators
+	- Logical Operators
+	- Bitwise Operators
+	- Range Operators
+                                            -----
+
+Arithmetic Operator:
+````````````````
+ +	:	 Addition		- 2 + 3 = 5
+ - 	:	Subtraction		- 5 - 2 = 3
+ * 	: 	Multiplication	- 5 * 2 = 10
+ / 	: 	Division		- 6 / 2 = 3
+ % 	: 	Modulus		- 5 % 2 = 1  - Remainder 
+                                            -----
+
+Assignment Operator:
+`````````````````
+   = 	:	Simple Assignment				-	C = A + B
+  +=	:	Add AND Assignment				-	C += A     	= C + A
+  -= 	:	Subtract AND Assignment			-	C  -= A	= C - A
+  *=	:	Muliply AND Assignment			-	C  *= A      	= C * A
+  /=	:	Divide AND Assignment				-	C  /= A	= C / A
+  %=	:	Modulus AND Assignment			-	C %= A	= C % A
+<<=	:	Left Shift AND Assignment			-	C <<= 2	= C << 2
+>>=	:	Right Shift AND Assignment			-	C >>= 2	= C >> 2
+  &=	:	Bitwise AND Assignment				-	C &= 2	= C & 2
+  ^=	:	Bitwise Exclusive OR and Assignment		-	C ^= 2	= C ^ 2
+  |=	:	Bitwise Inclusive OR and Assignment		-	C |= 2	= C | 2
+                                            -----
+
+Comparison Operator:		A = 10, B = 20
+`````````````````
+ == 	:	(A == B) is not true
+  !=	:	(A != B) is true
+   >	:	(A > B) is not true
+   < 	:	(A < B) is true
+ >=	:	(A >= B) is not true
+ <=	:	(A <= B) is true
+                                            -----
+
+Logical Operator:			A = 1, B = 0 
+`````````````
+ && 	: 	Logical AND - true - if both the operands are true	   -  	(A && B) is false
+  || 	:	Logical OR    - true - if any one is true			   - 	(A || B) is true
+   ! 	:	Logical NOT  - Opposite reaction			   -  	!(A && B) is true
+                                            -----
+
+Bitwise Operator:			A = 12, B = 25
+`````````````
+	- It converts the decimal to binary and calculates the deciamal and return 
+  &	:	Binary AND				-	A & B	= 8
+  |	:	Binary OR				-	A |  B	= 29
+  ^	:	Binary XOR				-	A ^ B = 21 
+  ~	:	Binary One's Complement	-	~b = -(25+1) = -26
+ <<	:	Binary Shift Left			-	A << 2 = 100
+ >>	: 	Binary Shift Right			-	A >> 2 = 6
+                                            -----
+
+Range Operator:
+`````````````
+ ...	: 	Range Operator			- 1 ... 5	= 1, 2, 3, 4, 5
+ ..< 	:	Half - Open Range 		- 1 ..< 5	= 1, 2, 3, 4
+ ...	: 	One Sided Range			- 1...		= 1, 2, 3, 4, ....
+							- ... 2		= 1, 2
+                                            -----
+
+Collection Type:
+`````````````
+ - Used to store a collection of values
+ - It has three types
+	- Array
+	- Sets
+	- Dictionaries
+                                            -----
+
+Array :
+`````
+ - Stores values of the same type in an ordered list, duplicate values is allowed. [ Square Bracket ]
+ - Used to maintain a large set of data under a single variable name
+ - Declare once and use multiple times
+
+Eg:
+ 	var weekdays = [ Monday, Tuesday, Wednesday, Thrusday, Friday, Saturday, Sunday ]
+
+	print(weekdays)							- ["Monday", "Tuesday", "Wednesday", "Thrusday", "Friday", "Saturday", "Sunday"]
+
+	print("There are \(weekdays.count) days in a week")	- There are 7 days in a week
+
+	print(weekdays[0])							- Monday
+
+	for days in weekdays{						- Today is Monday
+	    	print("Today is \(days)")					- Today is Tuesday
+	}									- . . .
+
+
+ - isEmpty 		- 	 Find if the variable is empty or not
+
+Eg:
+	if weekdays.isEmpty{
+		print("The days are Empty")
+	} else {
+		print("There are \(weekdays.count) days in a week")
+	}
+
+
+ - Insert 	 	-	Insert the value in the defined place
+
+Eg:
+	weekdays.insert("Today", at: 1)
+
+
+ - Append	 	- 	Inserts the value at the end 
+
+Eg:
+	weekdays.append("Tommorow")
+
+
+ - Content of	- 	Insert multiple values in the variable
+
+Eg:
+	weekdays.append(contentsOf: ["Today","Tommorow"])
+
+
+ - Remove		- 	Remove the value in the variable
+
+Eg:
+	weekdays.remove(at: 1)
+	weekdays.removeFirst() / (2) / removelast()
+	weekdays.removeAll()
+
+
+ - Sort		- 	Sorting in the order
+
+Eg:
+	weekdays.sorted() / weekdays.sort()
+
+
+- Reverse		-  	Reverse the order	[do it seperatly]
+
+Eg:
+	weekdays.reversed() / weekdays.reverse()
+
+ - Enumerated	- 	To find the position of the variable
+
+Eg:
+	for (index, element) in weekdays.enumerated(){
+		print("\(index) is the position of \(element)")
+	}
+
+ - Filter		- 	 Returns only the elements from the array that satisfy the provided condition
+
+Eg:
+	var num = [2,5,6,3,1,8,4,9,0,7]
+	var filtered = num.filter({ $0 > 5})
+	print(filtered)
+
+ - Map		- 	Transforms the array by applying the same operation to each element in the array
+
+Eg:
+	var numbers = [1, 2, 3]
+	var result = numbers.map { $0 * 3 }
+	print(result)
+                                     	   -----
+
+Sets:
+````
+ - Stores distinct value of same type with no defined order, no duplicate values are allowed  ( Parentheses )
+ - It is a collection of unique data
+
+Eg: 
+	var studentID : Set = [ 111, 112, 113, 114, 115]
+	
+ - You can't add the same value for the second time 
+ - Other than that everything will be same as the Array
+
+ - Set Operations		A: Set = [ 1, 3, 5, 7, 9 ] , B = [ 0, 2, 4, 6, 8 ]
+
+
+	- Union 			- Value in Both the Sets
+Eg:
+	print(A.union(B))    	-   	[8, 2, 9, 4, 5, 7, 6, 3, 1, 0]
+
+
+	- Intersection		- Common Value of Both Sets
+Eg:
+	print(A.intersection(B))   -      []
+
+
+	- Subtracting		- Values after subtracting of one Set
+Eg:
+	print(A.subtracting(B))    -     [5, 7, 3, 1, 9]
+
+
+	- Symmetric Difference	- Values after subtracting in both Sets
+Eg:
+	print(A.symmetricDifference(B))   -   [8, 2, 9, 4, 5, 7, 6, 3, 1, 0]
+
+
+- Set Membership and Equality
+
+	- Equal		 -	A == B			- Both sets contains all the same value
+	- Subset		 - 	A.isSubset(of: B)		- All elements in A exist in B
+	- Superset		 -	A.isSuperset(of: B)		- B Contains all of A's element
+	- Strict sub/perset - 	A.isStrictSubset(of: B)	- Check the subset but not equal
+	- Disjoint		 - 	A.isDisjoint(with: B)	- Find the common values
+                                            -----
+
+Dictionary:			var name = [ KeyType: ValueType ]()
+`````````
+ - It stores elements in key and value pair. It is also the unordered collection
+ - Keys are unique identifier
+ - used in JSON Data Structure
+
+Eg: 
+	var name: [ Int: String ] = [1: "One", 2: "Twoo"]
+	for (key, value) in name{
+		print("\(key) is the key value for \(value)")
+	}
+                                            -----
+
+Control Flow:
+```````````
+ - It is used to control the flow of execution in a program
+ - Types of Control flow
+	- Loop Statement
+	- Branch Statement
+	- Control Transfer Statement
+                                            -----
+
+Loop Statements:
+``````````````
+ - It allow a block of code to be executed repeatedly
+	- 	for-in
+	- 	while
+	- 	repeat-while
+
+- for-in
+   `````
+	- It allows the block of code to be executed once for each item in a collection
+
+Syntax:
+	for item in collection {
+	statements
+	}
+Eg:
+	for i in 1...3 {
+	print(i)
+	}
+
+
+  - stride(from: to: by: ) 
+Eg:
+	for i in stride(from: 0, to: 10, by: 1) {
+    		print(i) 					- 0 1 2 3 4 5 6 7 8 9 
+	}	
+
+
+  - stride(from: through: by: )	
+Eg:
+	for i in stride(from: 0, through: 10, by: 2) {
+    		print(i) 					- 0 2 4 6 8 10
+	}
+
+
+- while
+   ````
+	- It performs a set of statement until a condition becomes false
+
+Syntax:
+	while condition {
+	statements
+	}
+Eg:
+	var i:Int = 0
+	while i < 10 {
+    		print(i)		- 0 1 2 3 4 5 6 7 8 9 
+    		i += 1 
+	}
+
+ - repeat-while
+    ``````````
+	- It evalutes the condition at the end of each pass through the loop
+
+Syntax:
+	repeat {
+		statements
+	} while condition
+Eg:
+	var number = 1
+	repeat
+	{
+		print(number)				- 1 2 3 4 5
+		number = number + 1
+	} while (number <= 5)
+                                            -----
+
+Branch Statements:
+```````````````
+ - It allow the program to execute certain part of code depend on the value of condition
+ - There are three type
+	- If Statement
+	- Guard Statement
+	- Switch Statement
+
+ - If Statement
+    ``````````
+	- It execute code based on the evaluation on one or more conditon
+	- There are Three types
+		- if 
+		- if else
+		- if else if
+
+Syntax:										if condtion {
+						if condtion {					statement 1
+	if condition {				statement 1			} else if {
+		statements			} else {					statement 2
+	}						statement 2			} else {
+						}						statement 3
+											}
+Eg:
+	let mark  = 80
+	if mark >= 80{
+    		print("Very Good")
+	} else if mark >= 40 {
+    		print("Passed")
+	} else {
+    		print("Fail")	
+	}
+
+
+ - Guard Statement
+    `````````````
+	- It transfer program control out of scope if conditions aren't met
+	- It is just same as the if else statement but other than executing the followed it jumps out
+	- Guard must use control transfer statement in the code return, break, continue, throw	
+
+Syntax:
+	guard condition else {
+		statements
+	}
+Eg:
+	func oddEven() {
+    	let num = 21
+    	guard num % 2 == 0 else {
+        		print("\(num) is the Odd Number")
+        		return				         - 21 is the Odd Number
+   	}
+    	print("\(num) is the Even Number")
+	}
+	oddEven()
+
+
+ - Switch Statement
+   ``````````````
+	- It allows a block of code to execute among many alternatives
+
+Syntax:
+	switch (expression) {
+		case value1:
+			statement 
+		case value2:
+			statement
+		default:
+			statement
+	}
+Eg:
+	let age = 22
+	switch age {
+		case 0...16:
+	    		print("Child")
+		case 17...30:
+    			print("Young Adults")
+		case 31...45:
+   			print("Middle-aged Adults")
+		default:
+    			print("Old-aged Adults")
+	}
+
+Control Transfer Statements:
+```````````````````````
+ - It change the order of code to execute by transferring the control from one piece of code to another 
+ - There are five types
+	- continue
+	- break
+	- fallthrough
+	- return
+	- throw
+
+ - continue
+    ```````
+	- It skip the current iteration of the loop
+Eg:
+	for i in 1...5 {
+		if i == 3 {
+			continue			- 1 2 4 5
+		}
+	print(i)
+	}
+
+
+ - break
+    `````
+	- It terminate the loop immediately
+Eg:
+	for i in 1...5 {
+		if i == 3 {
+			break				- 1 2
+		}
+	print(i)
+	}
+
+- fallthrough
+   `````````
+	- It can be only used in switch statement
+	- It will proceed the case even it didn't match the switch expression
+Eg:
+	let num = 6
+	switch num {
+		case num 1...5:
+			print("First Five Numbers")
+			fallthrough
+		case num 5...10:
+			print("Last Five Numbers")
+		default:
+			print("In Number")
+	}
+
+
+ - return
+    `````
+	- Used to return values or expression from enclosing function
+Eg:
+	func sum(n1: Int, n2: Int) -> Int {
+		return n1 + n2				- 5
+	}
+	print("Sum = \(sum(n1: 3, n2: 2))")
+
+- throw
+   `````
+	- Used to throw an error inside a function
+Eg:
+ - Later with error handling 
+                                            -----
+
+Functions:
+````````
+ - It is a block of code that performs a specific task
+ - There are two types of function
+	- Standard Library function 
+	- User Defined function
+
+ - Standard Library function
+    ````````````````````
+	- It is a Built-in Function which are defined already in Swift Framework
+Eg:
+	print("Hello World!")
+
+ - User Defined Function
+    `````````````````
+	- It is mainly used to solve problems or perform tasks that are not available in Swift Framework.
+
+Eg:
+	func greet(name: String) -> String{
+		return "Hello " + name  				- Hello Sana
+	}
+	print(greet(name: "Sana"))
+                                            -----
+
+Closures :
+```````
+ - A Special type of functin without a function name
+ - A self-contained block of functionality that can be passed around and used
+ - Create a function and assign it to a variable 
+ - Call that function using that variable
+ - Even pass that function into other function as parameter
+Eg:
+
+ - Normal Funtion
+    ````````````
+	let names = ["Anna","Murali","Sana","Guru","Maddy","Peter"]
+	func usingFunction(_ n1: String, _ n2: String) -> Bool {
+		return n1 < n2							- ["Anna", "Guru", "Maddy", "Murali", "Peter", "Sana"]
+	}
+	var sortingfuction = names.sorted(by: usingFunction)
+	print(sortingfuction)
+
+ - Closure Expression
+    ```````````````
+	let names = ["Anna","Murali","Sana","Guru","Maddy","Peter"]	  - ["Anna", "Guru", "Maddy", "Murali", "Peter", "Sana"]
+	var sortingClosure = names.sorted{(n1: String, n2: String) -> Bool in return n1 < n2}
+	print(sortingClosure)
+
+ - Type inference - allows to omit the type of data
+    ```````````
+	let names = ["Anna","Murali","Sana","Guru","Maddy","Peter"]	  
+	var sortingType = names.sorted{ n1, n2 in n1 < n2}		- ["Anna", "Guru", "Maddy", "Murali", "Peter", "Sana"]
+	print(sortingType)
+
+ - Shorthand Argument Names
+    ``````````````````````
+	let names = ["Anna","Murali","Sana","Guru","Maddy","Peter"]
+	var sortingSAN = names.sorted{ $0 < $1 }				- ["Anna", "Guru", "Maddy", "Murali", "Peter", "Sana"]
+	print(sortingSAN)
+ 
+ - Operator Method
+    ``````````````
+	let names = ["Anna","Murali","Sana","Guru","Maddy","Peter"]	
+	var sortingSAN = names.sorted(by: >)				- ["Anna", "Guru", "Maddy", "Murali", "Peter", "Sana"]
+	print(sortingSAN)
+
+ - map() Method - it transform arrays
+    ```````````
+	let names = ["Anna","Murali","Sana","Guru","Maddy","Peter"]
+	var upCase = names.map{ $0.uppercased() }			- ["ANNA", "MURALI", "SANA", "GURU", "MADDY", "PETER"]
+	print(upCase)	
+
+	
+	var numbers = [20, 19, 7, 12]
+	numbers = numbers.map { $0 * 3 }					- [60, 57, 21, 36]
+	print(numbers)
+
+	let numbers = [20, 19, 7, 12].map { $0 * 3}
+	print(numbers)								- [60, 57, 21, 36]
+                                            -----
+Structures and Classes:
+``````````````````
+ - Both are used to Create object
+ - Class is a reference type, support inheritance, initializer is important 
+ - Struct is the value type, doesn't support inheritance, initializer will be defaulted
+
+ - It is general purpose, flexible constructs that become the building blocks of code
+
+Eg:
+	class defineClass{
+		var name: String
+		init(name: String) {
+			self.name = name
+		}
+	}
+	var name1 = defineClass(name: "Sana")			
+	var name2 = name1						
+	name2.name = "Peter"
+	print(name1.name)					- Peter
+	print(name2.name)					- Peter
+
+
+	struct defineClass{
+		var name: String
+		init(name: String) {
+			self.name = name
+		}
+	}
+	var name1 = defineClass(name: "Sana")
+	var name2 = name1
+	name2.name = "Peter"
+	print(name1.name)					- Peter
+	print(name2.name)					- Peter
+                                            -----
+
+Enumerations :
+```````````
+ - User defined data type that has Fixed number of related values
+ - Enum is as almost same as the structure, It also didn't allow the inheritance
+
+Eg: 
+	enum weekdays {
+		case Monday, Tuesday, Wednesday, Thrusday, Friday, Saturday, Sunday
+	}
+	var today = weekdays.Monday
+	print("Today is \(today)")
+
+ - Raw Value
+	
+Eg:
+	enum ways: String {
+		case up = "Up"
+		case dowm = "Down"
+		case left = "Left"
+		case right = "Right"	
+	}
+	let currentway = ways.up
+	print(currentway.rawValue)
+                                            -----
+
+Properties:
+````````
+ - A variable or constant which is stored inside a class or structure is called properties
+ - There are two types of properties
+	- Stored property
+	- Computered property
+
+ - Stored Property
+    ````````````
+	- It stores a variable or constant value as instance. [ The user defined stored value ]
+Eg:
+	class numbers {
+		var num1: Int = 2				- Here num1 is 2 which was stored
+	} 
+ 
+ - Computed Property
+    ```````````````
+	- It should to calculated the value to be stored. 
+Eg:
+	class numbers { ...
+		var sum: Int {					- Here sum have to add num1 and num2 to store the value 
+			num 1+ num 2
+		}
+
+ - Property Observers:
+    ```````````````
+	- It observer and respond to change in property value
+	- There are two types of property observers
+		- willSet - before the value is stored 
+		- didSet - after the new value is stored
+Eg:
+	class Samplepgm {
+   		var counter: Int = 0 {
+      			willSet(newTotal){
+         			print("Total Counter is: \(newTotal)")					- Total Counter is: 100
+      			}	 												- Value is changed from 0 to 100
+      			didSet {												- Total Counter is: 800
+        	    		print("Value is changed from \(oldValue) to \(counter)")		- Value is changed from 100 to 800
+      			}
+   		}
+	}
+
+let NewCounter = Samplepgm()
+NewCounter.counter = 100
+NewCounter.counter = 800
+
+ - Lazy Stored Properties
+    ``````````````````
+	- Initial value isn't calculated until the first time it's used
+	- It only use the variable 
+Eg:
+	lazy var name: String = " "
+                                            -----
+
+Methods:
+```````
+ - Function which is defined inside a class is called method
+
+Eg:
+	class Human {
+		func greet() {
+			print("Hello human!")
+		}
+	}
+	var name = Human()
+	name.greet()
+                                            -----
+
+Protocol :
+```````
+ - It is a blueprint that class or struct follows
+ - Is a communication contract for unrelated objects to rely on
+ - Protocols just hold the method or properties definition, not their acutal body
+ - The Protocol must specify whether the property will be gettable or gettable and settable
+
+ - Protocol provide a blueprint for Methods, properties and other requirements functionality
+ - Class, struct and enums can adopt protocols.
+
+Eg:
+	protocol Greet {
+	  var name: String { get }
+	  func message() 
+	} 
+	class Employee: Greet {
+	  var name = "Perry"
+	  func message() {
+	    print("Good Morning", name)	 - Good Morning Perry
+	  }
+	}
+	var employee1 = Employee()
+	employee1.message()	
+                                            -----
+
+Subscripts:
+````````
+ - Used to access elements within varius collection, array and dictionaries etc.
+                                            -----
+
+Inheritance:
+`````````
+ - Inheritance allows us to create a new class from an existing class.
+                                            -----
+
+Initialization:
+``````````
+  - It is a special type of function that is used to create an object of a class or struct.
+  - init() method to create an initializer.
+
+Eg:
+	class Bike{
+		var name: String
+	 	var grear: Int
+		init(name: String, gear: Int){
+			self.name = name
+			self.gear = gear
+		}
+	}
+	var bike1 = Bike(name: "KTM", gear: 5) 		- KTM have 5 Gears in it
+	print("\(bike1.name) have \(bike1.gear) Gears in it")
+
+                                            -----
+
+Deinitialization:
+````````````
+ - Deinitialization is a process to deallocate class instances when they're no longer needed. 
+			This frees up the memory space occupied by the system
+ - Deinitializers can only be used with classes and not with structs
+                                            -----
+
+Extension:
+`````````
+ - Creating a new function to an existing class
+
+Eg:
+
+                                            -----
+                                            -----
+                                            -----
+                                            -----
+                                            -----
+
+

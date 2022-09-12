@@ -1,0 +1,56 @@
+# inputstatus =1
+# if request.form['check']=='on': 
+#     inputstatus = 1
+# if request.form['check']=='off':
+#     inputstatus = 0
+
+if request.form['check'] in globals():
+    flash("yes")
+
+if hasattr('check'):
+     flash("yes")    
+else:
+    flash("no")                
+
+return redirect(url_for('Index'))
+
+
+
+@app.route('/test', methods = ['GET'])
+def tg():
+    return render_template("test.html")
+
+@app.route('/test', methods = ['POST'])
+def tp():
+    if request.method == 'POST':
+        
+        inputstatus =1
+        if request.form['check']=='on': 
+            inputstatus = 1
+        if request.form['check']=='off':
+            inputstatus = 0
+        flash(inputstatus)
+
+        return render_template("test.html")
+        name = request.form['name']
+        type = request.form['type']
+        age = request.form['age']
+        description = request.form['description']
+        date = request.form['date']
+       
+
+        my_data  = Data(name, type, age, description, date)
+        db.session.add(my_data)
+        db.session.commit()
+
+        flash("Inserted Sucessfully")
+
+        return redirect(url_for('Index'))
+
+
+        {% if row.status == 0 %}
+                        Active
+                        {% endif %}
+                        {% if row.status == 1 %}
+                        In Active
+                        {% endif %}

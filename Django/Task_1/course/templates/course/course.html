@@ -1,0 +1,66 @@
+{% extends "course/base.html" %}
+
+{% block content %}
+    <div class="container">
+
+        <!-- course -->
+        <div class="">
+
+            <!-- course title -->
+            <h1>{{ course.title }} - {{ course.body }}</h1>
+            <!-- <div> Created {{ course.pub_date }} by
+                <a href="{% url 'course:user_courses' course.user.username %}">{{ course.user.username }}</a> -->
+            </div>
+
+            <!-- course body -->
+            
+
+            <!-- Show Update and Delete button only if User is the owner of the course -->
+            {% if course.user == user %}
+                <div class="row">
+
+                    <!-- Delete button -->
+                    <a href="{% url 'course:delete_course' course.pk %}" class="col-md-2 pull-right">
+                        <button type="button" class="btn btn-primary btn-block">Delete</button>
+                    </a>
+
+                    <!-- Update button -->
+                    <a href="{% url 'course:update_course' course.pk %}" class="col-md-2 pull-right">
+                        <button type="button" class="btn btn-primary btn-block">Update</button>
+                    </a>
+
+                </div>
+            {% endif %}
+
+        
+
+        <h2>Modules:</h2>
+
+        <!-- moduless -->
+        {% for modules in moduless %}
+            <div class="">
+
+                <!-- <div> Created {{ modules.pub_date }} by
+                    <a href="{% url 'course:user_courses' modules.user.username %}">{{ modules.user.username }}</a>
+                </div> -->
+
+                <!-- modules body -->
+                <h3> {{ modules.body }}</h3>
+
+            </div>
+       
+        {% endfor %}
+<br>
+        <!-- Show modules button only if User is authenticated -->
+        {% if user.is_authenticated %}
+
+            <!-- modules button -->
+            <a href="{% url 'course:create_modules' course.pk %}" class="col-md pull-left">
+                <button type="button" class="btn btn-primary btn-block">+Add Modules</button>
+                <br>
+            </a>
+
+        {% endif %}
+ </div>
+    </div>
+{% endblock content %}

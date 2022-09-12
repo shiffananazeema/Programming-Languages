@@ -1,0 +1,117 @@
+/*JavaScript is the world's most popular programming language.
+  JavaScript to program the behavior of Web pages.*/
+
+//The Script Tag
+<script>
+document.getElementById("demo").innerHTML = "My First JavaScript";
+</script>
+//JavaScript function is placed in the <head> section of an HTML page.
+
+<script>
+function myFunction()
+{
+  document.getElementById("demo").innerHTML = "My First Javascript";
+}
+</script>
+//JavaScript function is placed in the <body> section of an HTML page.
+
+/*JavaScript Display Possibilities
+Writing into an HTML element, using innerHTML.
+Writing into the HTML output using document.write().
+Writing into an alert box, using window.alert().
+Writing into the browser console, using console.log().*/
+
+//Inner Html
+<script>
+document.getElementById("demo").innerHTML = 5 + 6;
+</script>
+
+//Attribute Value
+<body>
+<button onclick="document.getElementById('myImage').src='picname.img'">Show
+</button>
+<button onclick="document.getElementById('myImage').src='picname.img'">Don't Show
+</button>
+</body>
+
+//Style
+ 
+//Using document.write() to show in the web browser
+<script>
+document.write(5 + 6);
+</script>
+
+//Using the alert message
+alert("HI! World")
+alert(varname);
+<body>
+
+<h2>What Can JavaScript Do?</h2>
+
+<p id="demo">JavaScript can change the style of an HTML element.</p>
+
+<button type="button" onclick="document.getElementById('demo').style.fontSize='35px'">Click Me!</button>
+
+</body>
+//Using window.alert()
+<script>
+window.alert(5 + 6);
+</script>
+
+//Using console.log() to display the message in console
+<script>
+console.log(5 + 6);
+</script>
+
+//JavaScript Print
+<button onclick="window.print()"></button>
+
+//Code Block
+<button  type="button" onclick="myFunction()"></button>
+function myFunction() {
+    document.getElementById("demo1").innerHTML = "Hello Dolly!";
+    document.getElementById("demo2").innerHTML = "How are you?";
+  }
+
+//JavaScript Variables
+var homeCity / car1 = "cgk";
+var x = 5;
+var y = 6;
+var z = x + y;
+ 
+//Variable Basics
+var status="Single";
+console.log(status);
+/*OUTPUT:
+Single*/
+
+//To know the type
+var name = "Robin";
+var age = 42;
+var height = 1.74;
+console.log(typeof(name/age/height));
+String/NUmber
+ 
+//Assignment Operators
+var height = 1.72;
+var age = 42;
+age++/age--
+height -=/+=/ *=/ /= 0.2;
+console.log(height);
+
+/*Only Strings have ""*/
+
+//Arithmatic Oprations 
+== Equals(= =)
+>= Greater or equal(> =)
+<= Lesser then or equal(< =)
+!= Different or Not equal(! =)
+=== It will show ture if the value and type both are smae.(= = =)
+
+//Logical Operations
+&& needs every condition to be true in order not to be false
+|| needs any one to be true to show true
+! is the logical not if a content is true this will make it false or if its false it will make it true
+""  NUmber in quotes like "4">"33" = true because it only looks at the character in alphabatical order
+The condition operator
+ 

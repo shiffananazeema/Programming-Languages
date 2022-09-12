@@ -1,0 +1,28 @@
+{
+    "dependencies": {
+      "@devextreme/runtime": "2.3.14",
+      "devexpress-diagram": "2.1.47",
+      "devexpress-gantt": "4.0.13",
+      "devextreme": "21.2.7",
+      "devextreme-aspnet-data-nojquery": "2.8.6",
+      "devextreme-quill": "1.5.14",
+      "devextreme-react": "21.2.7",
+      "es6-object-assign": "1.1.0",
+      "inferno": "7.4.11",
+      "inferno-clone-vnode": "7.4.11",
+      "inferno-compat": "7.4.11",
+      "inferno-create-class": "7.4.11",
+      "inferno-create-element": "7.4.11",
+      "inferno-dom": "latest",
+      "inferno-extras": "7.4.11",
+      "inferno-hydrate": "7.4.11",
+      "jszip": "3.7.1",
+      "luxon": "1.28.0",
+      "prop-types": "15.8.1",
+      "react": "17.0.2",
+      "react-dom": "17.0.2",
+      "rrule": "2.6.6"
+    },
+    "description": "The TreeList allows users to drag and drop nodes. Use the icons in the leftmost column as the drag handles.\nTo configure node drag and drop, follow these steps:\n\n\nAllow users to reorder nodes\nIn the rowDragging object, set the allowReordering property to true. You can use the \"Allow Reordering\" checkbox under the TreeList to try this property.\n\n\nAllow users to change the node hierarchy\nEnable the allowDropInsideItem property to allow users to drop one node onto another, thus adding it as the target node's child. If the property is disabled, users can only drop nodes in between others. You can use the \"Allow Drop Inside Item\" checkbox under the TreeList to try this property.\n\n\nReorder nodes in code\nIn the onReorder function, change the parent ID of the reordered node and the node's index in the data array. If the node was dropped onto another node, changing the parent ID is sufficient. Refresh() the TreeList after these manipulations.\n\n\nPrevent a node from being moved inside its child node\nMoving a parent node inside its own child node breaks the hierarchy. Prevent this situation in the onDragChange function. Cycle through the target node's parents. If the parent's and source node's IDs are equal, cancel the ability to drop the node.\n\n\nShow or hide drag icons (optional)\nUsers use the icons as drag handles. To hide them, set the showDragIcons property to false. In this case, the drag handles are the rows themselves. Use the \"Show Drag Icons\" checkbox under the TreeList to try this property.\n\n\n",
+    "name": "Node Drag & Drop - DevExtreme Tree List"
+  }

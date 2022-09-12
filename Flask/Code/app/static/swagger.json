@@ -1,0 +1,234 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "description": "Assignment - To Create a REST API using Connexion, Swagger, SQLAlchemy, Marshmallow-SQLAlchemy, Pytest",
+        "version": "1.0.0",
+        "title": "Hyper Reality Technologies"
+    },
+    "host": "localhost:8080",
+    "basePath": "/api",
+    "tags": [
+        {
+            "name": "Data",
+            "description": "REST API"
+        }
+    ],
+    "servers": [
+        {
+            "url": "/"
+        }
+    ],
+    "components": {
+        "schemas": {
+            "Data": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "age": {
+                        "type": "integer"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Id": {
+                "type": "integer",
+                "properties": {
+                    "Id": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "Update": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "age": {
+                        "type": "integer"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "checked": {
+                        "type": "boolean"
+                    }
+                }
+            }
+        }
+    },
+    "paths": {
+        "/data": {
+            "post": {
+                "tags": [
+                    "Data"
+                ],
+                "summary": "Add Data",
+                "requestBody": {
+                    "description": "Add New Data To Database",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Data"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/components/schemas/Data"
+                        }
+                    },
+                    "404": {
+                        "description": "NOT FOUND",
+                        "schema": {
+                            "$ref": "#/components/schemas/Data"
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Data"
+                ],
+                "summary": "Get All Datas",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/components/schemas/Data"
+                        }
+                    },
+                    "404": {
+                        "description": "NOT FOUND",
+                        "schema": {
+                            "$ref": "#/components/schemas/Data"
+                        }
+                    }
+                }
+            }
+        },
+        "/data/{id}": {
+            "get": {
+                "tags": [
+                    "Data"
+                ],
+                "summary": "Get Data",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Get Data",
+                        "required": true,
+                        "type": "integer",
+                        "schema": {
+                            "$ref": "#/components/schemas/Id"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/components/schemas/Data"
+                        }
+                    },
+                    "404": {
+                        "description": "NOT FOUND",
+                        "schema": {
+                            "$ref": "#/components/schemas/Data"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Data"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Data id to update",
+                        "required": true,
+                        "type": "integer",
+                        "schema": {
+                            "$ref": "#/components/schemas/Id"
+                        }
+                    }
+                ],
+                "summary": "Update Data",
+                "requestBody": {
+                    "description": "Update Existing Data On Database",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Update"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/components/schemas/Data"
+                        }
+                    },
+                    "404": {
+                        "description": "NOT FOUND",
+                        "schema": {
+                            "$ref": "#/components/schemas/Data"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Data"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Data id to delete",
+                        "required": true,
+                        "type": "integer",
+                        "schema": {
+                            "$ref": "#/components/schemas/Id"
+                        }
+                    }
+                ],
+                "summary": "Delete Data",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/components/schemas/Data"
+                        }
+                    },
+                    "404": {
+                        "description": "NOT FOUND",
+                        "schema": {
+                            "$ref": "#/components/schemas/Data"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

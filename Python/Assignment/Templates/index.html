@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Models {% endblock %}
+
+
+{% block body %}
+
+<h2>Manage <b>Employess</b>
+<button type="button" >Add</button></h2>
+
+<table border="2" padding = "5">
+    <tr>
+        <th>ID</th>
+        <th>Checked</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Age</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th>Action</th>
+    </tr>
+    <tr>
+        <td>01</td>
+        <td>Ok</td>
+        <td>Shifa</td>
+        <td>Female</td>
+        <td>21</td>
+        <td>Good</td>
+        <td>13</td>
+        <td>
+            <button type="button" >Edit</button>
+            <button type="button" >Delete</button>
+        </td>
+    </tr>
+</table>
+
+{% endblock %}

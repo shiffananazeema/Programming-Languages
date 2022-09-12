@@ -1,0 +1,10 @@
+<html>
+ <head>
+  <script>
+   var message = "Hello World";
+   <!--alert("Hello World");--!>
+  </script>
+ </head>
+ <body>
+ </body>
+</html>

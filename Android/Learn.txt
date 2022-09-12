@@ -1,0 +1,149 @@
+ 				Android 
+				```````
+- Android is a Mobile Operating System that was developed by Google(GOOGL) 
+to be primarily used for touchscreen devices, cellphones and tablets.
+
+(Learning Using the Android Studio)
+
+Evolution of Android:
+`````````````````
+Android 1.0   		- Alpha      			(Sep, 2008) For SmartPhones
+Android 1.1             	- Beta                           	(Feb, 2009)
+Android 1.5             	- Cupcake      	        	(Apr, 2009)
+Android 1.6             	- Donut                        	(Sep, 2009)
+Android 2.0 - 2.1    	- Eclair                         	(Oct, 2009)
+Android 2.2 - 2.2.3	- Froyo                        	(May, 2010)
+Android 2.3 - 2.3.7 	- Gingerbread             	(Dec, 2010)
+Android 3.0 - 3.2.6 	- Honeycomb              	(Feb, 2011) Tablet Introduced
+Android 4.0 - 4.0.4 	- IceCream Sandwich	(Oct, 2011)
+Android 4.1 - 4.3.1 	- Jelly Bean                  	(Jul, 2012)
+Android 4.4 - 4.4.4 	- Kitkat                        	(Oct, 2013)
+Android 5.0 - 5.1.1 	- Lollipop                    	(Nov, 2014)
+Android 6.0 - 6.0.1 	- Marshmallow           	(Oct, 2015)
+Android 7.0             	- Nougat                     	(Aug, 2016)
+Android 7.1 - 7.1.2 	- Nougat                     	(Oct, 2016)
+Android 8.0             	- Oreo                         	(Aug, 2017)
+Android 8.1             	- Oreo                         	(Dec, 2017)
+Android 9.0             	- Pie                            	(Aug, 2018)
+Android 10.0           	- Android 10              	(Sep, 2019)
+Android 11              	- Android 11              	(Sep, 2020)
+Android 12              	- Android 12              	(Oct, 2021)
+Android 12.1           	- Android 12L            	(Mar, 2022)
+Android 13              	- Android 13                     -    
+
+
+Introduction to Android:
+```````````````````
+ - Android is a mobile operating system (OS) developed by Google.
+
+ - Android's kernel is based on one of the Linux kernel's long-term 
+support (LTS) branches.
+
+ - Designed for touchscreen mobile devices such as smartphones and 
+tablet computers.
+
+
+Features of Android:
+````````````````
+ - PowerFul Open Source
+ - Customizable Operating System
+ - Variety of apps can be developed
+ - Reduces the overall complexity
+ - Ready made, low cost for high-tech devices
+									
+
+Categories of Android:
+``````````````````
+ - Entertainment  		_ Personalization
+ - Tools                           	_ Music and Audio
+ - Communication          	_ Social Media and Video
+ - Productivity	          	_ Travel  and so on.,
+
+
+Android Runtime:
+``````````````
+ Android Runtime consists of Dalvik Virtual machine and Core Java libraries.
+
+ - DVM is optimized for low processing power and low memory environments.
+
+ - Unlike JVM, the Dalvik Virtual Machine doesn't run .class files, instead
+it runs .dex files
+
+       					|   	  Java Source Code
+          Java Source Code      	|              	  |
+	   	|       	   		|             Java Compiler 
+                 	|          	   	|	            |
+            Java Compiler  	   	|             Java Byte Code
+	      	|     	            	|     	    	  |   	
+                   	|		   	|	     dex compiler
+           Java Byte Code	   	|              	  |
+	          	|		   	|  	  Dalvik Byte Code     
+                   	|    		   	|           	  |       
+                    	|	             	|          Dalvik executable   
+                Java VM		   	|         	  |
+				   	|        	     Dalvik VM 
+                                                           
+					
+Android Application Development:
+```````````````````````````
+ 1. Activity
+ 2. Service
+ 3. Broadcast Receiver
+ 4. Content Provider
+			
+For Example:
+``````````
+    Alarm
+	UI where you shall set alarm	|  Acitivity
+	Data is saved		     	|  Content Provider
+	7:00 AM		                	|  Service
+	Event Handling		      	|  Broadcast Receiver	
+					
+
+
+
+
+
+
+
+
+
+
+
+How to Run the App on the Phone:
+````````````````````````````````
+In Phone:
+ - Activate the Developer Option
+ - Turn on USB Debugging, Install via USB and USB debugging(Security setting)
+
+- Connect the Phone to the System using USB
+- Select the File Transfer
+
+In Android Studio:
+ - Check in the Logcat if the Device is connected (At the Left Bottom)
+ - Check the Connected Device (At the Center Top)
+ - Run the App By clicking the Play symbol next to it
+
+The App will automatically run in the Phone
+
+
+Java: 
+`````
+Code Components: Four Components
+       
+________File_______
+|     			|
+|  Class            	|
+| --------------	|
+| |   Attributes | 	|
+| |----------|	| 
+| |  Methods    | 	|     
+| --------------	|
+|_________________	|
+
+File - File is an abstract data type. A named location used to store related 
+         information is known as a File.
+Class - Class is a template used to create objects and to define object 
+           data types and methods.
+Attributes - Variable stored in an instance or class is called an attribute.
+Methods - Function stored in an instance or class is called a method.

@@ -1,0 +1,51 @@
+[
+    {
+      "model": "course.course",
+      "pk": 1,
+      "fields": {
+        "name": "B.sc",
+        "title": "Bachlore of Science"
+      }
+    },
+    {
+      "model": "course.module",
+      "pk": 1,
+      "fields": {
+        "name": "Computer Science",
+        "course_id": 1
+      }
+    },
+    {
+      "model": "course.module",
+      "pk": 2,
+      "fields": {
+        "name": "Information Technology",
+        "course_id": 1
+      }
+    },
+    {
+      "model": "course.course",
+      "pk": 2,
+      "fields": {
+        "name": "B.E",
+        "title": "Bachlore of Engineering"
+      }
+    },
+    {
+      "model": "course.module",
+      "pk": 3,
+      "fields": {
+        "name": "Aeronotical Engineering",
+        "course_id": 2
+      }
+    },
+    {
+      "model": "course.module",
+      "pk": 4,
+      "fields": {
+        "name": "Electronics",
+        "course_id": 2
+      }
+    }
+  ]
+  

@@ -1,0 +1,46 @@
+<!DOCTYPE html>  
+<html lang = "en">  
+   <head><title>Home</title></head>  
+   <body>  
+      <h3>  
+         <a href = "{{ url_for('list_students') }}">Student Information</a>  
+      </h3>  
+        
+      <hr/>  
+      {%- for message in get_flashed_messages() %}  
+         {{ message }}  
+      {%- endfor %}  
+       
+      <form action= {{ url_for('search') }} method='post'></form>
+      <input type='text' name="roll" placeholder="search">
+      <input type="submit" placeholder="search">
+      <br><br>
+      <table border="2" padding = "5">  
+         <thead>  
+            <tr>  
+               <th>Name</th>  
+               <th>RollNo</th>  
+               <th>Age</th>  
+               <th>Department</th>  
+               <th>#</th>
+               <th>#</th>
+            </tr>  
+         </thead>  
+  
+         <tbody>  
+            {% for student in Students %}  
+               <tr>  
+                  <td>{{ student.name }}</td>  
+                  <td>{{ student.rollno }}</td>  
+                  <td>{{ student.age }}</td>  
+                  <td>{{ student.depart }}</td>
+                  <td><a href="/delete/{{student.id}}" type="button">Delete</a> </td> 
+                  <td><a href="/update/{{student.id}}" type="button">Update</a> </td>  
+               </tr>  
+            {% endfor %}  
+         </tbody>  
+      </table>  
+      <br><br>  
+      <a href="{{ url_for('addStudent') }}">Add New Student</a>  
+   </body>  
+</html>  

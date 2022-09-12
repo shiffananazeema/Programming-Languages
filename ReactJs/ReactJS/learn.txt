@@ -1,0 +1,183 @@
+React JS (JavaScript Front-End) Documentation is Not Completed Due to lack of time
+````````
+    - Open sourse library for building user interfaces
+    - Not a framework
+    - Focus on UI
+    - Rich ecosystem
+
+    - It was created by Jordan Walke, a software engineer at Facebook in
+2011 and released to public in May 2013.
+
+Why React?
+``````````
+    - Component Based Architecture
+    - Reusable code
+    - React is declarative: 
+|           Tell React what you want and React will build the actual UI
+|           React will handle efficiently updating and rendering of the components
+|           DOM updates are handles gracefully in React
+    - Seamlessly integrate react into any of your applications
+    - Portion of your page or a complete page or even an entire application itself
+    - React native for mobile applications
+
+Creating an App:
+````````````````
+    - npx
+        npx create-react-app <project_name>
+        npm package runner
+
+    - npm
+        npm install create-react-app -g
+        create-react-app<project_name>
+
+React Components:
+`````````````````
+    - ReactJS is all about components. ReactJS application is made up of 
+multiple components, and each component has its own logic and controls.
+
+    - Components describe a part of the user interface
+    - They are re-usable and can be nested inside other components
+    - Two types of Components
+
+        (i) Functional Component
+        `````````````````````````
+    - JavaScript Functions
+
+function Welcome(props) {
+    return <h1> Hello, {props.name}</h1>
+}
+
+        (ii) Class Component
+        `````````````````````
+    - Class extending Component Class
+    - Render method returning HTML
+
+class Welcome extends React.Component {
+    render() {
+        return <h1>Hello, {this.props.name}</h1>
+    }
+} 
+
+Functional Components:
+`````````````````````
+ - Create a Folder named components and added a file Greet.js
+ 
+ import React from 'react'
+
+ function Greet() {
+     return <h1>Hello Shiffana</h1>
+ }
+ export default Greet
+ 
+ or
+
+ export const Greet = () => <h1>Hello! Shiffana</h1>
+ 
+ - connect in App.js
+
+
+Class Component:
+````````````````
+ - Create a Folder named components and added a file Greet.js
+ 
+import React, {Component} from "react";
+
+class Welcome extends Component{
+    render() {
+        return <h1>Class Component</h1>
+    }
+}
+export default Welcome
+ 
+ - connect in App.js
+
+Functional vs Class components:
+```````````````````````````````
+
+                Functional                                  Class
+
+ - Simple Functions                           - More feature rich
+ - Use Func components as much as possible    - Maintain their own private data -state    
+ - Absence of 'this' keyword                  - Complex UI logic
+ - Solution without using state               - Provide lifecycle hooks
+ - Mainly responsible for the UI              - Stateful/Smart/Container
+ - Stateless/Dumb/Presentational
+
+JSX:
+````
+    - JavaScript XML (JSX) - Extension to the JavaScript language syntax
+    - Write XML-like code for elements and components
+    - JSX tags have a tag name, attributes and children
+    - JSX is not a necessity to write React applications
+    - JSX makes your react code simpler and elegant
+    - JSX ultimately transpiles to pure JavaScript which is understood by the browsers
+
+    - Differences
+    Class -> className
+    for -> htmlFor
+    camelCase property naming convention
+    - onclick -> onClick
+    - tabindex -> tabIndex
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+React State:
+````````````
+    - The state is an updatable structure that is used to contain data or 
+information about the component. The state in a component can change over time.
+
+React Props:
+````````````
+    - Props stand for "Properties." They are read-only components. It is an object 
+which stores the value of attributes of a tag and work similar to the HTML attributes. 
+It gives a way to pass data from one component to other components. It is similar to 
+function arguments.
+
+React Component API:
+````````````````````
+    - setState()
+    - forceUpdate()
+    - findDOMNode()
+
+React Component Life-Cycle:
+```````````````````````````
+    - Initial Phase
+    - Mounting Phase
+    - Updating Phase
+    - Unmounting Phase
+
+React Forms:
+````````````
+    - Forms are an integral part of any modern web application. It allows the users to 
+interact with the application as well as gather information from the users. 
+
+React Events:
+`````````````
+    - An event is an action that could be triggered as a result of the user action or 
+system generated event. React has its own event handling system which is very similar 
+to handling events on DOM elements.
+
+React Conditional Rendering:
+````````````````````````````
+    - 
+
+React Redux:
+````````````
+    - Redux is an open-source JavaScript library used to manage application state. React 
+uses Redux for building the user interface. It was first introduced by Dan Abramov 
+and Andrew Clark in 2015
+
+    - Redux is a pattern and library for managing and updating application state, 
+using events called "actions".

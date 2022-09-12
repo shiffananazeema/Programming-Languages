@@ -1,0 +1,166 @@
+openapi: 3.0.3
+info:
+  description: Assignment - To Create a REST API using Connexion, Swagger, SQLAlchemy, Marshmallow-SQLAlchemy, Pytest
+  version: 1.0.0
+  title: Hyper Reality Technologies
+servers:
+  - url: /
+
+
+components:
+  schemas:
+    Data:
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        age:
+          type: integer
+        description:
+          type: string
+    Id:
+      type: integer
+      properties:
+        Id:
+          type: integer
+    Update:
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        age:
+          type: integer
+        description:
+          type: string
+        checked:
+          type: boolean
+paths:
+  /data:
+    post:
+      tags:
+        - Data
+      summary: Add Data
+      operationId: add_data
+      requestBody:
+        description: Add New Data To Database
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Data'
+      responses:
+        '200':
+          description: OK
+          content: 
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Data"
+        '404':
+          description: NOT FOUND
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Data"
+    get:
+      tags:
+        - Data
+      summary: Get All Datas
+      operationId: app.get_all_data
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: NOT FOUND
+  /data/{id}:
+    get:
+      tags:
+        - Data
+      summary: Get Data
+      operationId: app.get_data
+      parameters:
+        - name: id
+          in: path
+          description: Get Data
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Data"
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Data"
+        '404':
+          description: NOT FOUND
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Data"
+    put:
+      tags:
+        - Data
+      parameters:
+        - name: id
+          in: path
+          description: Data id to update
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Data"
+      summary: Update Data
+      operationId: app.update_data
+      requestBody:
+        description: Update Existing Data On Database
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Update'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Data"
+        '404':
+          description: NOT FOUND
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Data"
+    delete:
+      tags:
+        - Data
+      parameters:
+        - name: id
+          in: path
+          description: Data id to delete
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Id"
+      summary: Delete Data
+      operationId: app.delete_data
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Data"
+        '404':
+          description: NOT FOUND
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Data"

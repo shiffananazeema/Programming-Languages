@@ -1,0 +1,90 @@
+Data Structure and Algorithm:
+````````````````````````
+	- Programming is all about data strutures and algorithms.
+	- Data structres are used to hold data while algorithms are used to solve
+the problem using that data.
+	- It helps to choose the best of various choices.
+
+
+Data Structure:
+````````````
+  - It is a storage that is used to store and organize data. 
+
+  - Data Structure and data types are slightly different. Data structure is the
+collection of data types arranged in a specific order ( Data Types - int , string, ...)
+
+- Types of Data Structure
+   ``````````````````
+	- Linear Data Structure 
+	- Non-linear Data Structure
+
+Linear Data Structure:
+`````````````````
+	- The elements are arranged in sequence one after the other, they are easy to implement.
+	- When the complexity of the program increases, this method might not be the best.
+
+  1. Array Data Structure
+      ````````````````
+	Elements are arranged in continous memory. All the elements are same type.
+Eg:
+	Elements	2 1 4 6 7 8
+	Index		0 1 2 3 4 5
+
+  2. Stack Data Structure
+      ````````````````
+	Elements are stored in LIFO Principle. [ Last In First Out ]
+Eg:
+ 	1 2 3 
+	1 2           3			- Books in the table.
+
+  3. Queue Data Structure
+      `````````````````
+	Elements are stored in FIFO Principle. [ First In First Out ] 
+Eg:
+	1  2  3
+  1          2  3				- Line to buy tickets	
+
+  4. Linked List Data Structure
+      ````````````````````
+	Elements are stored along with the next elements address 
+Eg:
+	Head -> 1 | next -> 2 | next -> Null
+
+Non-Linear Data Structure
+`````````````````````
+	Elements are stored in hierarchical manner, where one element will be
+connected to one or more elements
+
+  1. Graph Data Structure			node-ds that stores value any datatype
+      `````````````````
+	Each node is called vertex and each vertex is connected to other vertices through edges.
+Eg:	
+		0 ----- 3
+		|  \
+		|    2
+		| /   \
+		1      4
+
+  2. Trees Data Structure
+      ````````````````
+	Similar to graph, tree is also a collection of vertices and edges. But there can
+only be one edge between two vertices
+Eg:
+				1
+			        /   \
+                                     2      3
+ 			     / \
+			   2    3
+
+Algorithm								
+````````
+  - A set of steps or instructions to solve a particular problem or completing a task
+  
+Eg:
+	Cooking - Following the instructions and ingredients to add
+	Driving - Following the directions to get to the destination
+
+	* - Understanding when to use the algorithm is the most important thing
+
+Linear Search :
+```````````
