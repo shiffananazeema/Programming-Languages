@@ -1,0 +1,48 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "learn_flutter_1",
+            "cwd": "Flutter\\learn_flutter_1",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "learn_flutter_1 (profile mode)",
+            "cwd": "Flutter\\learn_flutter_1",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "learn_flutter_1 (release mode)",
+            "cwd": "Flutter\\learn_flutter_1",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "First_Flutter",
+            "cwd": "Android\\Projects\\First_Flutter",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "First_Flutter (profile mode)",
+            "cwd": "Android\\Projects\\First_Flutter",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "First_Flutter (release mode)",
+            "cwd": "Android\\Projects\\First_Flutter",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
